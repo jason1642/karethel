@@ -12,7 +12,7 @@ class User < ApplicationRecord
       id: id,
       username: username,
       email: email,
-      password: password,
+      # password: password,
       created_at: created_at,
       updated_at: updated_at
     }

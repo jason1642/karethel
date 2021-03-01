@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  # before_action :authorize_request, except: [ :create, :index, :new]
-  # skip_before_action :authorize_request, only: [:create]
+  before_action :authorize_request, except: [ :create, :index, :new]
+  skip_before_action :authorize_request, only: [:create]
 
   # GET /users or /users.json
   def index
@@ -35,9 +35,9 @@ class UsersController < ApplicationController
       session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
       tokens = session.login
       response.set_cookie(JWTSessions.access_cookie,
-                                value: tokens[:access],
-                                httponly: true,
-                                secure: Rails.env.production?)
+      value: tokens[:access],
+      httponly: true, 
+      secure: Rails.env.production?)
 
       render json: tokens
     else
@@ -75,6 +75,10 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_digest)
+      params.require(:user).permit(:username,
+                                  :email, 
+                                  :password, 
+                                  # :password_digest
+                                  )
     end
 end
