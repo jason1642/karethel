@@ -1,0 +1,44 @@
+body {
+  background-color: #32323e;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-grey::-webkit-scrollbar {
+  /* background-color: #32323e; */
+  /* color: #1f1f24; */
+  /* width: 10px; */
+  display: none;
+}
+
+.no-scroll-feed::-webkit-scrollbar {
+  /* background-color: #32323e; */
+  /* color: #1f1f24; */
+  /* width: 10px; */
+  display: none;
+}
+
+html {
+  line-height: 1.15;
+}
+
+.App {
+  background-color: #32323e;
+  width: 100%;
+  height: auto;
+}
+
+main {
+  padding: 2rem;
+  margin-top: -16px;
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    padding: 0;
+    margin-top: 0;
+  }
+}
