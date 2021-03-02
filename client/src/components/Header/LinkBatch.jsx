@@ -29,8 +29,8 @@ const LinkBatch = props => {
   return (
     <>
       <div style={{ flexGrow: .7, display: 'flex' }}></div>
-      <StyledLink to=''>HELP</StyledLink>
-      <StyledLink to=''>FEEDBACK</StyledLink>
+      {/* <StyledLink to=''>HELP</StyledLink>
+      <StyledLink to=''>FEEDBACK</StyledLink> */}
 
 
 

@@ -11,11 +11,12 @@ const LinkPortfolioNotification = () => {
 
   `;
 
-  const Title = styled.div` font-size: 24px;
-  margin-right: 1rem;
-  font-weight: 400;
-  color: #8f94ab;
-  `;
+  const Title = styled.div`
+    font-size: 24px;
+    margin-right: 1rem;
+    font-weight: 400;
+    color: #8f94ab;
+    `;
   const TextRow = styled.div` display: flex;
   align-items: flex-start;
   justify-content: space-between;

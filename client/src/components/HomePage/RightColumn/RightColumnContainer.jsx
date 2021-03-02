@@ -16,7 +16,7 @@ const RightColumnContainer = () => {
 
   return (
     <Container>
-      <LinkPortfolioNotification />
+      {/* <LinkPortfolioNotification /> */}
       <Feed />
     </Container>
   );

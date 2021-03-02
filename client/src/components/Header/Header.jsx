@@ -49,9 +49,9 @@ const Header = props => {
       {/* {windowWidth <= 768 ? 'X' : <LinkBatch />} */}
       {/* <Menu> */}
 
-      <StyledLink to='/'>HOME</StyledLink>
+      {/* <StyledLink to='/'>HOME</StyledLink> */}
       {/* <StyledLink to='/chat'>CHAT</StyledLink> */}
-      <StyledLink to='/portfolio'>WATCHLIST</StyledLink>
+      {/* <StyledLink to='/portfolio'>WATCHLIST</StyledLink> */}
       <LinkBatch
         currentUser={props.currentUser}
         handleLogout={props.handleLogout}

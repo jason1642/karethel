@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import WatchlistHeader from './WatchlistHeader.jsx'
+import WatchlistHeader from './MostActiveHeader.jsx'
 import TableMain from './TableMain.jsx'
 
 

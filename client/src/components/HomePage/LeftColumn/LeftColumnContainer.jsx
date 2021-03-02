@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import MarketOverview from './MarketOverview/MarketOverview.jsx'
-import WatchlistContainer from './Watchlist.jsx/WatchlistContainer.jsx'
-
+import WatchlistContainer from './Watchlist/WatchlistContainer.jsx'
+import MostActiveContainer from './MostActiveTable/MostActiveContainer'
 
 
 const LeftColumnContainer = props => {
@@ -23,6 +23,7 @@ const LeftColumnContainer = props => {
       <WatchlistContainer
         currentUser={props.currentUser}
       />
+      <MostActiveContainer />
 
     </Container>
   );
