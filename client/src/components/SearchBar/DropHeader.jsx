@@ -50,10 +50,22 @@ const DropHeader = props => {
     color: black;
     border-radius: 3px;
   `;
-
+  const Icon = styled(FontAwesomeIcon)`
+    
+    font-size: 25px;
+  `;
   return (
     <Header>
+      {/* <ImageContainer>
+        <ProfilePicture src={props.currentUser.image} alt='' />
+      </ImageContainer> */}
+      {/* <UsernameContainer> */}
       {props.currentUser.username}
+      s
+      {/* </UsernameContainer> */}
+      {/* <div>
+        <Icon icon={faAngleDown} />
+      </div> */}
     </Header>
   );
 }

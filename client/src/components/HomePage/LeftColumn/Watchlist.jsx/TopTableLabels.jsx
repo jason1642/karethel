@@ -33,7 +33,6 @@ const HomeMyStocksMainHeader = () => {
 
 
 
-
   const list = ['Price', 'Today % Change', 'Today $ Change', 'YTD Return', 'Prev Close', '52 Week High', '52 Week Low', 'Market Cap'];
 
   const menu = list.map((ele, i) =>

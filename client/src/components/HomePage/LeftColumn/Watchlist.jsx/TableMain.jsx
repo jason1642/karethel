@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import HomeMyStocksMainHeader from './HomeMyStocksMainHeader'
-import HomeMyStocksInfo from './HomeMyStocksInfo'
+import TopTableLabels from './TopTableLabels'
+import WatchlistInfo from './WatchlistInfo'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 
-const HomeMyStocksMain = () => {
+const HomeMyStocksMain = props => {
 
   const Container = styled.div`
     padding-bottom: 1rem;
@@ -55,16 +55,19 @@ const HomeMyStocksMain = () => {
     overflow-x: auto;
     scrollbar-color: red yellow;
 `;
-  const usersTestStocks = ['AAPL', 'MSFT', 'TSLA', 'FB']
-  const [usersStocksData, setUsersStocksData] = useState([])
 
+  const defaultStockList = ['AAPL', 'MSFT', 'TSLA', 'FB']
+
+
+  const [usersWatchlist, setUsersWatchlist] = useState(props.currentUser ? props.currentUser.watchlist : defaultStockList)
+  const [usersStocksData, setUsersStocksData] = useState([])
+  console.log(props.currentUser)
   useEffect(() => {
 
     const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
+    // console.log(props.currentUser.watchlist)
 
-
-
-    usersTestStocks.map(async ele => {
+    usersWatchlist.map(async ele => {
       const fetchStockData = async () => {
 
         const response = await axios.get(`https://cloud.iexapis.com/stable/stock/${ele}/quote?token=${IEX_API_KEY}`)
@@ -113,8 +116,10 @@ const HomeMyStocksMain = () => {
 
 
         <OverflowXDiv className='scrollbar-grey'>
-          <HomeMyStocksMainHeader />
-          <HomeMyStocksInfo stockData={usersStocksData} />
+          <TopTableLabels />
+          <WatchlistInfo
+            usersWatchlist={usersWatchlist}
+            stockData={usersStocksData} />
 
 
 

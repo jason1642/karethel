@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import HomeMyStockHeader from './HomeMyStocksHeader.jsx'
-import HomeMyStockMain from './HomeMyStocksMain.jsx'
+import WatchlistHeader from './WatchlistHeader.jsx'
+import TableMain from './TableMain.jsx'
 
 
 
-const HomeMyStocksContainer = () => {
+const HomeMyStocksContainer = props => {
 
   const Container = styled.div`   
     display: block; 
@@ -18,10 +18,12 @@ const HomeMyStocksContainer = () => {
   }
   `;
 
+
   return (
     <Container>
-      <HomeMyStockHeader />
-      <HomeMyStockMain />
+      <WatchlistHeader />
+      <TableMain
+        currentUser={props.currentUser} />
     </Container>
   )
 }

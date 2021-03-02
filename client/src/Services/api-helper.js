@@ -39,27 +39,7 @@ export const removeToken = () => {
   api.defaults.headers.common.authorization = null;
 }
 
-// ========================================
-// ================ avatars ===============
-// ========================================
-export const getAllAvatars = async () => {
-  const resp = await api.get('/avatars');
-  return resp.data;
-}
 
-// ========================================
-// ================ comments ===============
-// ========================================
-
-export const getAllComments = async (postid) => {
-  const resp = await api.get(`/posts/${postid}/comments`);
-  return resp.data;
-}
-
-export const destroyComment = async (postid, commentid) => {
-  const resp = await api.delete(`/posts/${postid}/comments/${commentid}`);
-  return resp;
-}
 
 // ========================================
 // ================ posts =================
@@ -121,7 +101,8 @@ export const getOneUser = async (id) => {
 // ========================================
 
 
-export const patchUser = async (userId, url) => {
+export const editUser = async (userId, url) => {
   const resp = await api.put(`/users/${userId}`, url);
   return resp.data;
 }
+

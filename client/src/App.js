@@ -3,9 +3,11 @@ import './App.css';
 import Header from './components/Header/Header.jsx'
 import { Redirect, Route } from 'react-router-dom'
 import Footer from './components/Footer/Footer.jsx'
-import HomeSearchBar from './components/HomePage/HomeSearchBar.jsx'
+import HomeSearchBar from './components/SearchBar/SearchBar.jsx'
 import { loginUser, registerUser, getAllPosts, verifyUser, removeToken } from './Services/api-helper';
 import RoutesContainer from './components/Container/Container'
+import SearchBar from './components/SearchBar/SearchBar'
+
 const App = () => {
 
   useEffect(() => {
@@ -41,18 +43,26 @@ const App = () => {
   }
 
   useState(() => {
-    verifyUser().then(v => setCurrentUser(v))
+    verifyUser().then(async v => await setCurrentUser(v))
     // console.log(currentUser)
+
   }, [currentUser])
-  console.log(currentUser)
+  // console.log(currentUser.watchlist)
+
   return (
     <div className="App">
       <Header
         currentUser={currentUser}
         handleLogout={handleLogout}
       />
+      <HomeSearchBar />
+
+
+      {/* ./components/Container/Container */}
       <RoutesContainer
-        handleLogin={handleLogin} />
+        handleLogin={handleLogin}
+        currentUser={currentUser}
+      />
 
       <Footer />
     </div>

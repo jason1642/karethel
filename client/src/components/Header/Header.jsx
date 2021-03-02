@@ -50,8 +50,8 @@ const Header = props => {
       {/* <Menu> */}
 
       <StyledLink to='/'>HOME</StyledLink>
-      <StyledLink to='/chat'>CHAT</StyledLink>
-      <StyledLink to='/portfolio'>MY STOCKS</StyledLink>
+      {/* <StyledLink to='/chat'>CHAT</StyledLink> */}
+      <StyledLink to='/portfolio'>WATCHLIST</StyledLink>
       <LinkBatch
         currentUser={props.currentUser}
         handleLogout={props.handleLogout}

@@ -38,8 +38,6 @@ const HomeMyStocksInfo = props => {
   // console.log(props.stockData)
   return (
     <Container>
-
-
       {props.stockData.map((ele, i) => <TestDiv key={i}>
 
         <Cell>${ele.latestPrice}</Cell>

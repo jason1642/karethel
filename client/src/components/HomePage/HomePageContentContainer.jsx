@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import RightColumnContainer from './RightColumn/RightColumnContainer.jsx'
 import LeftColumnContainer from './LeftColumn/LeftColumnContainer.jsx'
 
-const HomePageContentContainer = () => {
+
+const HomePageContentContainer = props => {
 
   const Container = styled.div`
     display: flex;
@@ -16,9 +17,13 @@ const HomePageContentContainer = () => {
       flex-direction: column;
   }
   `;
+  console.log(props)
   return (
     <Container>
-      <LeftColumnContainer />
+
+      <LeftColumnContainer
+        currentUser={props.currentUser} />
+
       <RightColumnContainer />
     </Container>
   );

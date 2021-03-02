@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
   before_action :authorize_request, except: [ :create, :index, :new]
-  skip_before_action :authorize_request, only: [:create]
+  # skip_before_action :authorize_request, only: [:create, :update]
 
   # GET /users or /users.json
   def index
     @users = User.all
-
     render json: @users.as_json(),status: :ok
   end
 
@@ -23,6 +22,27 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
+
+
+
+
+
+
+
+
+
+
+
+
+  # Show posts made by user
+  # /users/:id/posts
+ 
+
+
+
+
+
+
 
   # POST /users or /users.json
   def create
@@ -45,18 +65,27 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1 or /users/1.json
+
+  # PATCH/PUT /users/1
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update(user_params)
+      render json: @user
+    else
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
+  # PATCH/PUT /users/1 or /users/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @user.update(user_params)
+  #       format.html { redirect_to @user, notice: "User was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @user }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /users/1 or /users/1.json
   def destroy
@@ -77,8 +106,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username,
                                   :email, 
-                                  :password, 
-                                  # :password_digest
+                                  :password,
+                                  watchlist: []
                                   )
     end
 end

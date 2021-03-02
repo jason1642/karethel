@@ -89,6 +89,7 @@ const MarketPriceTable = () => {
       setMarketOverviewData(marketDataArray)
       fetchStockData()
     })
+    console.log(marketOverviewData)
   }, [])
 
 
@@ -96,7 +97,7 @@ const MarketPriceTable = () => {
     return marketOverviewData.slice(sliceStart, sliceUpTo).map((ele, i) =>
 
       <MarketTile key={i} style={{ marginRight: i === 1 ? '0' : '20px', borderLeft: `3px solid ${colorArr[i]}` }}>
-        <Link style={{ textDecoration: 'none' }} to='/quote/SPY'>
+        <Link style={{ textDecoration: 'none' }} to={`/quote/${ele.symbol}`}>
 
 
           <MarketTileRow>

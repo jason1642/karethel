@@ -21,13 +21,14 @@ const LeftColumn = props => {
 
   console.log(props)
   return (
-    <>{
-      props.stockData ?
-        <Container>
-          {props.stockData ? <QuoteOverview stockData={props.stockData} symbolParam={props.symbol} /> : <></>}
-          <CompanyProfileContainer stockData={props.stockData} symbol={props.symbol} />
-        </Container> : <></>
-    }</>
+    <>
+      {
+        props.stockData ?
+          <Container>
+            {props.stockData ? <QuoteOverview stockData={props.stockData} symbolParam={props.symbol} /> : <></>}
+            <CompanyProfileContainer stockData={props.stockData} symbol={props.symbol} />
+          </Container> : <></>
+      }</>
   );
 }
 

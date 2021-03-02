@@ -3,13 +3,14 @@ import HomePageContentContainer from './HomePageContentContainer';
 
 
 
-const HomePage = () => {
+const HomePage = props => {
 
 
 
   return (
     <div className='home-page-container'>
-      <HomePageContentContainer />
+      <HomePageContentContainer
+        currentUser={props.currentUser} />
     </div>
   );
 }
