@@ -72,7 +72,7 @@ const HomeMyStocksHeader = () => {
 
 
       <RowOne>
-        <Title>My Stocks</Title>
+        <Title>Stocks</Title>
         <ToggleTray>
           <Button>My Stocks</Button>
           <Button>Top Movers</Button>
