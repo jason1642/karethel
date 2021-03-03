@@ -42,9 +42,14 @@ const App = () => {
     return <Redirect to='/' />
   }
 
+  const confirmUser = () => {
+    const response = verifyUser();
+    response.then(v => setCurrentUser(v))
+    console.log(currentUser)
+  }
+
   useState(() => {
-    verifyUser().then(async v => await setCurrentUser(v))
-    // console.log(currentUser)
+    confirmUser();    // console.log(currentUser)
 
   }, [currentUser])
   // console.log(currentUser.watchlist)
