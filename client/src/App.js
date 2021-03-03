@@ -6,7 +6,6 @@ import Footer from './components/Footer/Footer.jsx'
 import HomeSearchBar from './components/SearchBar/SearchBar.jsx'
 import { loginUser, registerUser, getAllPosts, verifyUser, removeToken } from './Services/api-helper';
 import RoutesContainer from './components/Container/Container'
-import SearchBar from './components/SearchBar/SearchBar'
 
 const App = () => {
 
