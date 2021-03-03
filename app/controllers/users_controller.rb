@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  before_action :authorize_request, except: [ :create, :index, :new]
+  # before_action :authorize_request, except: [ :create, :index, :new]
   # skip_before_action :authorize_request, only: [:create, :update]
 
   # GET /users or /users.json
