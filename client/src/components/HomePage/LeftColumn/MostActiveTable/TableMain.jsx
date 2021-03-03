@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import TopTableLabels from './TopTableLabels'
-import WatchlistInfo from './MostActiveData'
+import WatchlistInfo from './MostActive'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 

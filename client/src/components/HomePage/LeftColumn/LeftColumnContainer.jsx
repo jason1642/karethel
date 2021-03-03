@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import MarketOverview from './MarketOverview/MarketOverview.jsx'
-import WatchlistContainer from './Watchlist/WatchlistContainer.jsx'
+import WatchlistContainer from './Watchlist.jsx/WatchlistContainer.jsx'
 import MostActiveContainer from './MostActiveTable/MostActiveContainer'
 
 
