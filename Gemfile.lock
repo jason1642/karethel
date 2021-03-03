@@ -129,6 +129,14 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -142,6 +150,7 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     thread_safe (0.3.6)
+    tilt (2.0.10)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     websocket-driver (0.7.3)
@@ -168,6 +177,7 @@ DEPENDENCIES
   rack (>= 2.2.3)
   rack-cors
   rails (~> 6.0.3)
+  sassc-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
