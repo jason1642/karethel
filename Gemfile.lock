@@ -140,7 +140,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tzinfo (1.2.9)
@@ -164,14 +163,13 @@ DEPENDENCIES
   jwt
   listen (~> 3.2)
   nokogiri (>= 1.11.0.rc4)
-  pg (>= 0.18, < 2.0)
+  pg
   puma (>= 4.3.5)
   rack (>= 2.2.3)
   rack-cors
   rails (~> 6.0.3)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (>= 1.4.2)
   tzinfo-data
   websocket-extensions (>= 0.1.5)
 
