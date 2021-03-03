@@ -18,6 +18,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # gem 'sqlite3', '>= 1.4.2' 
 
+gem 'sassc-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem "nokogiri", ">= 1.11.0.rc4"
