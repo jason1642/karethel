@@ -25,7 +25,7 @@ const LoginContainer = props => {
         e.preventDefault();
         console.log(props)
         // changes variable from false to true if user has valid log-in information
-        await props.handleLogin({ "username": username, "password": password }).then((value) => window.location.href = "/", (error) => alert("Error"))
+        await props.handleLogin({ "username": username, "password": password }).then((value) => props.history.push('/'), (error) => alert("Error"))
         // if user if valid, take user to home page
       }}>
         <h3>Log in</h3>
