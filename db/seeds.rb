@@ -7,5 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
  
 User.create(username: "Karethel", email: "karethel@email.com", password: "pass123")
+User.create(username: "Flip82", email: "flip@email.com", password: "password222")
+User.create(username: "BryonSH321", email: "bryon@email.com", password: "password333")
+User.create(username: "Lorinda", email: "lorinda@email.com", password: "password444")
+User.create(username: "Alianda191", email: "jason@email.com", password: "password444")
+User.create(username: "Brand", email: "brand@email.com", password: "password444")
+User.create(username: "Exit", email: "exit@email.com", password: "password444")
 
 p "#{User.count} user(s) created"
