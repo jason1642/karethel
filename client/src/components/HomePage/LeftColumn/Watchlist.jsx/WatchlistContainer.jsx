@@ -39,7 +39,9 @@ const HomeMyStocksContainer = props => {
   useEffect(() => {
     setCurrentUser(props.currentUser)
     currentUser && setWatchlist(currentUser.watchlist)
-  }, [props.currentUser])
+  }, [currentUser, watchlist])
+
+
   console.log(watchlist, currentUser)
   return (
     <Container>
@@ -54,9 +56,6 @@ const HomeMyStocksContainer = props => {
             <TableMain
               currentUser={currentUser} />
           </>
-
-
-
 
         }
           {
