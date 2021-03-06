@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import WatchlistHeader from './WatchlistHeader.jsx'
 import TableMain from './TableMain.jsx'
@@ -33,6 +33,12 @@ const HomeMyStocksContainer = props => {
   font-weight: 400;
   color: #8f94ab;
   `;
+
+  const [currentUser, setCurrentUser] = useState()
+  useEffect(() => {
+    setCurrentUser(props.currentUser)
+  }, [props.currentUser])
+  console.log(currentUser)
   return (
     <Container>
 
