@@ -36,26 +36,30 @@ const HomeMyStocksContainer = props => {
   return (
     <Container>
 
-
-      {/* {
-        props.currentUser ?
+      {
+        props.currentUser &&
+        <> {
           props.currentUser.watchlist.length > 0
-          :
+          &&
           <>
             <WatchlistHeader />
             <TableMain
               currentUser={props.currentUser} />
           </>
-            ?
+
+
+
+
+        }
+          {
             props.currentUser.watchlist.length === 0
-            :
+            &&
             <NoWatchlistBox>
               <Title>No stocks on watchlist</Title>
             </NoWatchlistBox>
-
-
-      } */}
-
+          }
+        </>
+      }
 
       {/* {
         props.currentUser &&
