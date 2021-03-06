@@ -45,9 +45,9 @@ const HomeMyStocksContainer = props => {
     <Container>
 
       {
-        currentUser &&
+        currentUser && watchlist &&
         <> {
-          currentUser.watchlist.length > 0
+          watchlist.length > 0
           &&
           <>
             <WatchlistHeader />
@@ -60,7 +60,7 @@ const HomeMyStocksContainer = props => {
 
         }
           {
-            currentUser.watchlist.length === 0
+            watchlist.length === 0
             &&
             <NoWatchlistBox>
               <Title>No stocks on watchlist</Title>
