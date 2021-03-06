@@ -79,3 +79,14 @@ test:
   username: jasoncruz
   password:
   timeout: 5000
+
+
+
+  production:
+  adapter: postgresql
+  encoding: unicode
+  database: karethel_test
+  pool: 5
+  username: jasoncruz
+  password:
+  timeout: 5000
