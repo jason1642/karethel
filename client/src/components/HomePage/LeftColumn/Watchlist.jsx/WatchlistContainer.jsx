@@ -40,7 +40,7 @@ const HomeMyStocksContainer = props => {
     setCurrentUser(props.currentUser)
     currentUser && setWatchlist(currentUser.watchlist)
   }, [props.currentUser])
-  console.log(watchlist)
+  console.log(watchlist, currentUser)
   return (
     <Container>
 
