@@ -61,7 +61,7 @@ const HomeMyStocksMain = props => {
 
   const [usersWatchlist, setUsersWatchlist] = useState(props.currentUser ? props.currentUser.watchlist : defaultStockList)
   const [usersStocksData, setUsersStocksData] = useState([])
-  console.log(props.currentUser)
+  // console.log(props.currentUser)
   useEffect(() => {
 
     const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';

@@ -36,7 +36,7 @@ const HomeMyStocksContainer = props => {
   return (
     <Container>
       {
-        props.currentUser && props.currentUser.watchlist.length > 0 &&
+        props.currentUser &&
         <>
           <WatchlistHeader />
           <TableMain
