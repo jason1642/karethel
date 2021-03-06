@@ -35,10 +35,12 @@ const HomeMyStocksContainer = props => {
   `;
 
   const [currentUser, setCurrentUser] = useState()
+  const [watchlist, setWatchlist] = useState()
   useEffect(() => {
     setCurrentUser(props.currentUser)
+    currentUser && setWatchlist(currentUser.watchlist)
   }, [props.currentUser])
-  console.log(currentUser)
+  console.log(watchlist)
   return (
     <Container>
 
