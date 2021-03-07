@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header.jsx'
-import { Redirect, Route } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Footer from './components/Footer/Footer.jsx'
 import HomeSearchBar from './components/SearchBar/SearchBar.jsx'
-import { loginUser, registerUser, getAllPosts, verifyUser, removeToken } from './Services/api-helper';
+import { loginUser, verifyUser, removeToken } from './Services/api-helper';
 import RoutesContainer from './components/Container/Container'
 
 const App = () => {
