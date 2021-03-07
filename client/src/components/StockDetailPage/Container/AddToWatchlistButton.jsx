@@ -11,7 +11,11 @@ const AddToWatchlistButton = props => {
     width: 20%;
     text-align: center;
     background-color: #52e3c2;
-    
+    border-radius: 2px;
+    &:hover{
+      cursor: pointer;
+      
+    }
   `;
 
   const AddToUserWatchlist = async symbol => {

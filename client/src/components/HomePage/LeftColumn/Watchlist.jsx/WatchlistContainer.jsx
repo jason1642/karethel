@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import WatchlistHeader from './WatchlistHeader.jsx'
 import TableMain from './TableMain.jsx'
-
+import { Link } from 'react-router-dom'
 
 
 const HomeMyStocksContainer = props => {
@@ -33,7 +33,10 @@ const HomeMyStocksContainer = props => {
   font-weight: 400;
   color: #8f94ab;
   `;
-
+  const LoginButton = styled(Link)`
+    color: #ffffff;
+    text-decoration: none;
+  `
   const [currentUser, setCurrentUser] = useState()
   const [watchlist, setWatchlist] = useState()
   useEffect(() => {
@@ -42,7 +45,7 @@ const HomeMyStocksContainer = props => {
   }, [props.currentUser, currentUser, watchlist])
 
 
-  console.log(watchlist, currentUser)
+  // console.log(watchlist, currentUser)
   return (
     <Container>
 
@@ -58,30 +61,22 @@ const HomeMyStocksContainer = props => {
           </>
 
         }
+          {/* if watchlist is empty, display 'no stock on watchlist' */}
           {
             watchlist.length === 0
             &&
             <NoWatchlistBox>
-              <Title>No stocks on watchlist</Title>
+              <Title>You have no stocks on your watchlist</Title>
             </NoWatchlistBox>
           }
         </>
       }
 
-      {/* {
-        props.currentUser &&
-        props.currentUser.watchlist.length === 0 &&
-        <NoWatchlistBox>
-          <Title>No stocks on watchlist</Title>
-        </NoWatchlistBox>
-      } */}
-
-
-
+      {/* message if no user is logged in */}
       {
         currentUser === null &&
         <NoWatchlistBox>
-          <Title>Log in to create a watchlist</Title>
+          <Title><LoginButton to='/login'>Log in</LoginButton> to create a watchlist</Title>
         </NoWatchlistBox>
       }
     </Container>

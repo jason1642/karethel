@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header.jsx'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Route, useParams } from 'react-router-dom'
 import Footer from './components/Footer/Footer.jsx'
 import HomeSearchBar from './components/SearchBar/SearchBar.jsx'
 import { loginUser, verifyUser, removeToken } from './Services/api-helper';
@@ -59,7 +59,8 @@ const App = () => {
         currentUser={currentUser}
         handleLogout={handleLogout}
       />
-      <HomeSearchBar />
+      <Route exact path={['/', '/quote/:symbol']} render={(routerProps) =>
+        <HomeSearchBar  {...routerProps} />} />
 
 
       {/* ./components/Container/Container */}

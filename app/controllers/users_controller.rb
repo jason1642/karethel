@@ -24,24 +24,8 @@ class UsersController < ApplicationController
   end
 
 
-
-
-
-
-
-
-
-
-
-
   # Show posts made by user
   # /users/:id/posts
- 
-
-
-
-
-
 
 
   # POST /users or /users.json
@@ -50,16 +34,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      @token = encode({user_id: @user.id});
-      payload  = { user_id: user.id }
-      session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
-      tokens = session.login
-      response.set_cookie(JWTSessions.access_cookie,
-      value: tokens[:access],
-      httponly: true, 
-      secure: Rails.env.production?)
+      # @token = encode({user_id: @user.id});
+      # payload  = { user_id: user.id }
+      # session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
+      # tokens = session.login
+      # response.set_cookie(JWTSessions.access_cookie,
+      # value: tokens[:access],
+      # httponly: true, 
+      # secure: Rails.env.production?)
 
-      render json: tokens
+      # render json: tokens
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -107,7 +91,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username,
                                   :email, 
                                   :password,
-                                  watchlist: []
+                                  # watchlist: []
                                   )
     end
 end

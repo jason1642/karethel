@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// chooses which database to be useed
 const baseUrl = process.env.NODE_ENV === 'production' ? 'https://karethel-finance.herokuapp.com/' : 'http://localhost:3000'
 // const baseUrl = 'http://localhost:3000'
 
