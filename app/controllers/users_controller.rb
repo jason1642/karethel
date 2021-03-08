@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  # before_action :authorize_request, except: [ :create, :index, :new]
-  # skip_before_action :authorize_request, only: [:create, :update]
-
+  before_action :authorize_request, only: []
   # GET /users or /users.json
   def index
     @users = User.all
@@ -34,6 +32,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
+      render json: @user, status: :created
       # @token = encode({user_id: @user.id});
       # payload  = { user_id: user.id }
       # session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
@@ -91,7 +90,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username,
                                   :email, 
                                   :password,
-                                  # watchlist: []
+                                  watchlist: []
                                   )
     end
 end

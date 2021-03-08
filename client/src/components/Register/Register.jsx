@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { registerUser } from '../../Services/api-helper';
+import { registerUser, loginUser } from '../../Services/api-helper';
 import styled from 'styled-components'
 
 
@@ -116,7 +116,11 @@ const Register = props => {
         <Button
           onClick={async () =>
             await registerUser({ "username": username, "email": email, "password": password })
-              .then((value) => props.history.push('/'), (error) => alert(error))
+              .then(async (value) => {
+                await loginUser({ "username": username, "password": password })
+                props.history.push('/')
+                window.location.reload()
+              }, (error) => alert(error))
           } >Register</Button>
 
       </Form >
