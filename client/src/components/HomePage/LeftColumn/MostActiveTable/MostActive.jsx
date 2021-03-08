@@ -18,20 +18,18 @@ const HomeMyStocksInfo = props => {
    
   `;
   const Cell = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 1.09rem 0 1.09rem 0;
-  height: 45px;
-  text-align: right;
-  padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 1.09rem 0 1.09rem 0;
+    height: 45px;
+    text-align: right;
+    padding-left: 2rem;
     width: 110px;
     max-width: 110px;
     min-width: 110px;
     font-size: 14px;
     color: white;
-    
-  /* height: 100%; */
-  border-bottom: 1px solid grey;
+    border-bottom: 1px solid grey;
 
 
   `;
