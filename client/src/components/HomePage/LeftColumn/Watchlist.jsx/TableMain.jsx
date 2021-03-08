@@ -64,8 +64,11 @@ const HomeMyStocksMain = props => {
   // console.log(props.currentUser)
   useEffect(() => {
 
-    const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
-    // console.log(props.currentUser.watchlist)
+    // API KEY ONE - 
+    // const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
+
+    // API KEY TWO
+    const IEX_API_KEY = 'pk_c93669f2ba4f4caab1df2c56cc4ce5fb ';
 
     usersWatchlist.map(async ele => {
       const fetchStockData = async () => {

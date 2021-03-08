@@ -5,9 +5,7 @@ import TableMain from './TableMain.jsx'
 import { Link } from 'react-router-dom'
 
 
-const HomeMyStocksContainer = props => {
-
-  const Container = styled.div`   
+const Container = styled.div`   
     display: block; 
     background-color: #393945;
     margin-top: 0.5rem;
@@ -18,7 +16,7 @@ const HomeMyStocksContainer = props => {
       width: 100%;
   }
   `;
-  const NoWatchlistBox = styled.div`
+const NoWatchlistBox = styled.div`
     display: flex;
     padding: 1rem 2rem;
     margin-bottom: 1rem;
@@ -27,16 +25,20 @@ const HomeMyStocksContainer = props => {
     align-items: center;
     justify-content: center;
       `;
-  const Title = styled.div`
+const Title = styled.div`
   font-size: 28px;
   /* margin-right: 1rem; */
   font-weight: 400;
   color: #8f94ab;
   `;
-  const LoginButton = styled(Link)`
+const LoginButton = styled(Link)`
     color: #ffffff;
     text-decoration: none;
   `
+
+const HomeMyStocksContainer = props => {
+
+
   const [currentUser, setCurrentUser] = useState()
   const [watchlist, setWatchlist] = useState()
   useEffect(() => {

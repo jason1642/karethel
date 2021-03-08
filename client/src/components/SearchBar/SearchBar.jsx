@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 import SearchIconSVG from '../../images/searchIcon.svg'
 import ToolTip from './ToolTip.jsx'
-import { Redirect, Route, useParams } from 'react-router-dom'
-
+import InputSearch from './InputSearch'
 
 
 const InputContainer = styled.div`
@@ -23,24 +22,7 @@ height: 18px;
 width: 18px;
 `;
 
-const SearchBarInput = styled.input`
-display: inline-block;
-width: 100%;
-padding: 1.1rem 1rem;
-background-color: inherit;
-border: none;
-font-size: 18px;
-font-weight: 200;
-line-height: 1.15;
-color: white;
-&:focus{
-border: none;
-outline: none;
-}
-&:active{
-border: none;
-}
-`;
+
 
 
 
@@ -49,18 +31,12 @@ const HomeSearchBar = props => {
 
 
 
-  const [input, setInput] = useState('exmaple12');
-
-  console.log(props.match.params)
   return (
-    <InputContainer>
+    <InputContainer onSubmit={() => { }}>
       <SearchIcon src={SearchIconSVG} alt='' />
-      <SearchBarInput
-        type='text'
-        placeholder='Search...'
-      // value={} 
 
-      />
+      <InputSearch />
+
       <ToolTip />
     </InputContainer>
   );

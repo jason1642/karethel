@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const QuoteOverview = props => {
-  const Container = styled.div`
+const Container = styled.div`
     padding : 2rem 2.5rem 0px;
     padding-bottom: 15px;
     margin-bottom: .3rem;
@@ -14,9 +13,9 @@ const QuoteOverview = props => {
     background-color: #393945;
     color: white;
   `;
-  const Content = styled.div`
+const Content = styled.div`
   `;
-  const RowOne = styled.div`
+const RowOne = styled.div`
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
@@ -24,17 +23,20 @@ const QuoteOverview = props => {
     color: black;
   `;
 
-  const RowTwo = styled.div`
+const RowTwo = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   `;
-  const RowTwoSpan = styled.span`
+const RowTwoSpan = styled.span`
     margin-left: 5px;
     font-size: 14px;
     padding-left: 5px;
     text-align: right;
   `;
+
+const QuoteOverview = props => {
+
   const greenOrRed = () => (props.stockData.changePercent * 100).toFixed(2) > 0 ? '#52e3c2' : '#ff4495'
   const caretUpOrDown = () => (props.stockData.changePercent * 100).toFixed(2) > 0 ? <i style={{
     color: '#52e3c2'
@@ -43,7 +45,7 @@ const QuoteOverview = props => {
   }} className='fas fa-caret-down' />
 
   const ytdGreenOrRed = () => (props.stockData.ytdChange * 100).toFixed(2) > 0 ? '#52e3c2' : '#ff4495'
-  console.log(props)
+  // console.log(props)
   return (
     <>
 

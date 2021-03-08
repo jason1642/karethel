@@ -5,20 +5,17 @@ import WatchlistInfo from './MostActive'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-
-const HomeMyStocksMain = props => {
-
-  const Container = styled.div`
+const Container = styled.div`
     padding-bottom: 1rem;
 
   `;
 
-  const Main = styled.div`
+const Main = styled.div`
     height: 100%;
     margin-bottom: 2rem;
     display: flex;
     `;
-  const StaticLeftColumn = styled.div`
+const StaticLeftColumn = styled.div`
     overflow: hidden;
     width: 150px;
     font-size: 14px;
@@ -27,7 +24,7 @@ const HomeMyStocksMain = props => {
     flex-direction: column;
     justify-content: space-between;
 `;
-  const StaticItem = styled.div`
+const StaticItem = styled.div`
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -40,7 +37,7 @@ const HomeMyStocksMain = props => {
     /* border-radius: 20px; */
   `;
 
-  const Symbol = styled.p`
+const Symbol = styled.p`
     display: inline-block;
     background-color: grey;
     border-radius: 5px;
@@ -51,25 +48,26 @@ const HomeMyStocksMain = props => {
       cursor: pointer;
     }
   `;
-  const OverflowXDiv = styled.div`
+const OverflowXDiv = styled.div`
     overflow-x: auto;
     scrollbar-color: red yellow;
 `;
 
-
+const HomeMyStocksMain = props => {
 
   const [stockData, setStockData] = useState()
   useEffect(() => {
 
-    const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
+    // API KEY ONE
+    // const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
+
+    // API KEY TWO
+    const IEX_API_KEY = 'pk_c93669f2ba4f4caab1df2c56cc4ce5fb';
 
     const fetchStockData = async () => {
-      // console.log("stirng")
       await axios.get(`https://cloud.iexapis.com/stable/stock/market/collection/list?collectionName=mostactive&limit=15&token=${IEX_API_KEY}`).then(v => setStockData(v.data))
     }
-    fetchStockData()
-
-
+    // fetchStockData()
 
   }, [])
 
@@ -113,9 +111,7 @@ const HomeMyStocksMain = props => {
             <WatchlistInfo
               // usersWatchlist={usersWatchlist}
               stockData={stockData} />
-            {/*  */}
-            {/*  */}
-            {/*  */}
+
 
           </OverflowXDiv>
 

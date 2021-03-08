@@ -16,7 +16,11 @@ const QuoteCompanyProfile = props => {
 
   const [companyProfile, setCompanyProfile] = useState()
   useEffect(() => {
-    const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
+    // API KEY ONE - 
+    // const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
+
+    // API KEY TWO
+    const IEX_API_KEY = 'pk_c93669f2ba4f4caab1df2c56cc4ce5fb ';
 
 
     const fetchStockData = async () => {

@@ -5,8 +5,6 @@ import Login from '../Login/LoginContainer.jsx'
 import StockDetailPage from '../StockDetailPage/Container/StockDetailPage.jsx'
 import HomePage from '../HomePage/HomePage'
 import { Route } from "react-router-dom"
-import { loginUser, registerUser, getAllPosts, verifyUser, removeToken } from '../../Services/api-helper';
-// import HomeSearchBar from './HomeSearchBar'
 
 
 const Container = props => {

@@ -74,9 +74,11 @@ const MarketPriceTable = () => {
 
   let marketDataArray = []
   useEffect(() => {
+    // API KEY ONE - 
+    // const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
 
-    // const FMP_API_KEY = '0dafce6ce2fa49c8f0acd0ac316dfa33';
-    const IEX_API_KEY = 'pk_3256652724eb490abdfd234401050f50';
+    // API KEY TWO
+    const IEX_API_KEY = 'pk_c93669f2ba4f4caab1df2c56cc4ce5fb ';
 
 
 
@@ -84,12 +86,10 @@ const MarketPriceTable = () => {
       const fetchStockData = async () => {
         const response = await axios.get(`https://cloud.iexapis.com/stable/stock/${ele}/quote?token=${IEX_API_KEY}`)
         setMarketOverviewData(oldArr => [...oldArr, response.data])
-        // console.log(response.data)
       }
       setMarketOverviewData(marketDataArray)
       fetchStockData()
     })
-    console.log(marketOverviewData)
   }, [])
 
 
@@ -97,7 +97,15 @@ const MarketPriceTable = () => {
     return marketOverviewData.slice(sliceStart, sliceUpTo).map((ele, i) =>
 
       <MarketTile key={i} style={{ marginRight: i === 1 ? '0' : '20px', borderLeft: `3px solid ${colorArr[i]}` }}>
-        <Link style={{ textDecoration: 'none' }} to={`/quote/${ele.symbol}`}>
+        <Link
+          style={{ textDecoration: 'none' }}
+          to={{
+            pathname: `/quote/${ele.symbol}`,
+            state: {
+              stockData: ele
+            }
+          }}
+        >
 
 
           <MarketTileRow>

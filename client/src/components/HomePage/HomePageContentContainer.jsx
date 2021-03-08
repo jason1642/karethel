@@ -3,10 +3,7 @@ import styled from 'styled-components'
 import RightColumnContainer from './RightColumn/RightColumnContainer.jsx'
 import LeftColumnContainer from './LeftColumn/LeftColumnContainer.jsx'
 
-
-const HomePageContentContainer = props => {
-
-  const Container = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,15 +12,21 @@ const HomePageContentContainer = props => {
     height: auto;
     @media (max-width: 768px) {
       flex-direction: column;
-  }
-  `;
-  console.log(props)
+    }
+    `;
+
+const HomePageContentContainer = props => {
+
+  document.title = 'Karethel Finance'
+
   return (
     <Container>
-
+      {/* Left Column :
+       Market Overview, Watchlist Table, Most Active Table */}
       <LeftColumnContainer
         currentUser={props.currentUser} />
-
+      {/* Right Column : 
+      News Feed */}
       <RightColumnContainer />
     </Container>
   );
