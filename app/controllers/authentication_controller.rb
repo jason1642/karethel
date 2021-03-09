@@ -1,5 +1,5 @@
 class AuthenticationController < ApplicationController
-  before_action :authorize_request, except: [:login, :register]
+  before_action :authorize_request, except: [:index, :register, :show]
 
   # POST /auth/login
   def login

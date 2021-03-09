@@ -67,7 +67,7 @@ const HomeMyStocksMain = props => {
     const fetchStockData = async () => {
       await axios.get(`https://cloud.iexapis.com/stable/stock/market/collection/list?collectionName=mostactive&limit=15&token=${IEX_API_KEY}`).then(v => setStockData(v.data))
     }
-    fetchStockData()
+    // fetchStockData()
 
   }, [])
 

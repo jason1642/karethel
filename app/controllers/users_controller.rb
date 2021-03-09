@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
-  before_action :authorize_request, only: []
+  before_action :set_user, only: [:show, :update, :destroy, :create]
+  # before_action :authorize_request
+  
   # GET /users or /users.json
   def index
     @users = User.all
@@ -84,6 +85,12 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
+
+    # Confirms the correct user.
+    # def correct_user
+    #   @user = User.find(params[:id])
+    #   redirect_to(root_url) unless current_user?(@user)
+    # end
 
     # Only allow a list of trusted parameters through.
     def user_params

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import LeftColumn from '../LeftColumn/LeftColumn.jsx'
 import RightColumn from '../RightColumn/RightColumn.jsx'
 import axios from 'axios'
-import AddToWatchlistButton from './AddToWatchlistButton'
+import AddOrRemoveFromWatchlistButton from './AddOrRemoveFromWatchlistButton'
 
 const Container = (props) => {
 
@@ -60,7 +60,7 @@ const Container = (props) => {
     <>
 
       { props.currentUser &&
-        <AddToWatchlistButton
+        <AddOrRemoveFromWatchlistButton
           currentUser={props.currentUser}
           pageSymbol={pageSymbol}
         />

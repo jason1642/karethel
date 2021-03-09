@@ -2,21 +2,22 @@ import React from 'react';
 import styled from 'styled-components'
 import { editUser } from '../../../Services/api-helper'
 
-
-
-const AddToWatchlistButton = props => {
-  const Container = styled.div`
-    background-color: white;
+const Container = styled.div`
+    &:hover{cursor: pointer; }
+  `;
+const AddButton = styled.div`
+    background-color: #52e3c2;
     padding: 15px;
     width: 20%;
     text-align: center;
-    background-color: #52e3c2;
     border-radius: 2px;
-    &:hover{
-      cursor: pointer;
-      
-    }
-  `;
+    
+  `
+const RemoveButton = styled.div`
+`
+
+const AddToWatchlistButton = props => {
+
 
   const AddToUserWatchlist = async symbol => {
     const theUser = props.currentUser
@@ -31,14 +32,18 @@ const AddToWatchlistButton = props => {
   }
   return (<>
     {props.currentUser &&
-      <Container onClick={() => {
-        AddToUserWatchlist(props.pageSymbol)
-        // window.location.reload()
-      }
-      }>
-        Add To Watchlist
-
-  </Container >
+      <Container>
+        {
+          props.currentUser.watchlist.find(ele => ele === props.pageSymbol) ?
+            <RemoveButton>
+              Remove from Watchlist
+            </RemoveButton>
+            :
+            <AddButton onClick={() => AddToUserWatchlist(props.pageSymbol.toUpperCase())}>
+              Add To Watchlist
+    </AddButton>
+        }
+      </Container >
     }
   </>
   )
