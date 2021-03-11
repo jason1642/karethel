@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FeedMain = props => {
-  const Container = styled.div`
+
+
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1 1 0%;
@@ -15,7 +16,7 @@ const FeedMain = props => {
       height: 60vh;
   }
   `;
-  const ListItem = styled.div`
+const ListItem = styled.div`
     background-color: #393945;
     padding: 1rem 3rem;
     margin-bottom: 2px;
@@ -29,7 +30,7 @@ const FeedMain = props => {
   }
   `;
 
-  const MetaData = styled.div`
+const MetaData = styled.div`
     display: inline-block;
     padding: 3px 5px;
     border-radius: 3px;
@@ -39,7 +40,7 @@ const FeedMain = props => {
     font-size: 10px;
     margin-bottom: 10px;
   `;
-  const Title = styled.div`
+const Title = styled.div`
     color: white;
     font-size: 14px;
     font-weight: 500;
@@ -49,7 +50,7 @@ const FeedMain = props => {
     color: white;
    
   `;
-  const ListContent = styled.div`
+const ListContent = styled.div`
     box-sizing:border-box;
     overflow: auto;
     &:hover{
@@ -60,13 +61,18 @@ const FeedMain = props => {
     }
     
 `;
-  const Description = styled.div`
+const Description = styled.div`
     overflow: hidden;
     color: #b4b8cd;
     font-size: 14px;
     margin-top: 0.5rem;
     height: 50px;
   `;
+
+
+
+const FeedMain = props => {
+
   // console.log(props.businessNews)
   return (<>
     <Container className='no-scroll-feed'>

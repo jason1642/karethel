@@ -13,7 +13,7 @@ const Container = props => {
   const Main = styled.div`
   `
 
-
+  console.log(props)
   return (
     <Main>
 
@@ -36,7 +36,8 @@ const Container = props => {
       <Route exact path='/register' render={(props) => (
         <Register
           {...props}
-          handleRegister={props.handleRegister}
+          handleLogin={props.handleLogin}
+        // handleRegister={props.handleRegister}
         />
       )} />
 

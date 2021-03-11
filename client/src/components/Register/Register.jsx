@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { registerUser, loginUser } from '../../Services/api-helper';
+import { registerUser } from '../../Services/api-helper';
 import styled from 'styled-components'
 
 
 const Input = styled.input`
-    /* width: 40%; */
     padding: 15px 22px;
     background-color: #4d505f;
     color: white;
@@ -39,30 +38,30 @@ margin: 40px auto;
 text-align: center;
 `;
 const LoginLink = styled(Link)`
-color: white;
+  color: white;
 /* text-decoration: none; */
 `
 const Form = styled.div`
-margin: 50px auto;
+  margin: 50px auto;
 
 `
 const Container = styled.div`
     display: flex;
-    padding: 70px 0;
+    padding: 150px 0;
     margin: 0 auto;
     flex-direction: column;
   `
 const Button = styled.div`
-padding: 10px 16px;
-border-radius: 5px;
-text-align: center;
-margin: 25px auto 0;
-background-color: #52e3c2;
-width: calc(50% - 8px);
-margin-bottom: 20px;
-&:hover{
-  cursor: pointer;
-}
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 25px auto 0;
+  background-color: #52e3c2;
+  width: calc(50% - 8px);
+  margin-bottom: 20px;
+  &:hover{
+    cursor: pointer;
+  }
 `
 const Register = props => {
 
@@ -77,58 +76,83 @@ const Register = props => {
       setUsername(value) :
       name === 'password' ?
         setPassword(value) : setEmail(value)
-
+    console.log(username, email, password)
   }
-  const handleRegister = async (registerData) => {
-    const currentUser1 = await registerUser(registerData);
+  const [button, setButton] = useState()
+
+  const handleRegister = async userDataInput => {
+    console.log(props)
+    console.log(email, username, password)
+    await registerUser({
+      "username": username,
+      "email": email,
+      "password": password
+    })
+      .then(async (value) => {
+        console.log('logging in')
+        await props.handleLogin({
+          "username": username,
+          "password": password
+        }).then(v => {
+          props.history.push('/')
+          // window.location.reload()
+        },
+          (error1) => alert(error1))
+
+      }, (error) => alert(error))
   }
 
+  useEffect(() => {
+    console.log(props)
+
+    setButton(<Button
+      onClick={handleRegister} >Register</Button>
+    )
+  }, [props.handleLogin])
 
   return (
 
     <Container>
-      <Form>
-        <Title>Sign up.</Title>
-        <Input
-          id="username"
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-          placeholder='Username'
-        />
-        <Input
-          id="email"
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          placeholder='Email'
-        />
-        <Input
-          id="password"
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-          placeholder='Password'
-        />
-        <Button
-          onClick={async () =>
-            await registerUser({ "username": username, "email": email, "password": password })
-              .then(async (value) => {
-                await loginUser({ "username": username, "password": password })
-                props.history.push('/')
-                window.location.reload()
-              }, (error) => alert(error))
-          } >Register</Button>
 
-      </Form >
+      <>
+        <Form>
+          <Title>Sign up.</Title>
+          <Input
+            id="username"
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleChange}
+            placeholder='Username'
+          />
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            placeholder='Email'
+          />
+          <Input
+            id="password"
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+            placeholder='Password'
+          />
 
-      <LoginBox>
-        Already have an account?
+          <Button
+            onClick={handleRegister} >Register</Button>
+
+        </Form >
+
+        <LoginBox>
+          Already have an account?
           <LoginLink to='/login'> Log in here</LoginLink>
-      </LoginBox>
+        </LoginBox>
+
+      </>
     </Container>
 
   )

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     display: flex;
-    padding: 70px 0;
+    padding: 150px 0;
     margin: 0 auto;
   `
 const Form = styled.div`
@@ -74,7 +74,6 @@ const LoginContainer = props => {
       setUsername(value) :
       name === 'password' ?
         setPassword(value) : console.log('nothing')
-    console.log(username, password)
   }
   return (
     <Container>

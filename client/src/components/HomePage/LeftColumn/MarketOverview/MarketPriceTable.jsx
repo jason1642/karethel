@@ -4,22 +4,15 @@ import styled from 'styled-components'
 import axios from 'axios'
 import isMarketOpenFunction from '../../../../resources/isMarketOpenFunction.jsx'
 
-
-
-const MarketPriceTable = () => {
-
-  // console.log(isMarketOpenFunction.isItPremarket())
-  // console.log(isMarketOpenFunction.isItAfterHours())
-
-  const Container = styled.div`
+const Container = styled.div`
     display: flex;
     /* flex-grow: 1; */
     margin-right: -20px;
     flex-wrap: wrap;
     justify-content: space-around;
     `;
-  //tiles
-  const MarketTile = styled.div`
+//tiles
+const MarketTile = styled.div`
     min-width: 90px;
     display: flex;
     flex-direction: column;
@@ -39,26 +32,33 @@ const MarketPriceTable = () => {
     }
     `;
 
-  const MarketTileRow = styled.div`
+const MarketTileRow = styled.div`
     display: flex;
     justify-content: space-between;
     align-content: center;
   `;
 
-  const MarketTileIndexName = styled.div`
+const MarketTileIndexName = styled.div`
     align-items: center;
     font-size: 14px;
     font-weight: bold;
     color: white;
   `;
 
-  //tiles
-  const PairContainer = styled.div`
+//tiles
+const PairContainer = styled.div`
   flex-grow: 1;
   display: flex;
   margin: 0 20px 10px 0;
   justify-content: space-between;
   `;
+
+const MarketPriceTable = () => {
+
+  // console.log(isMarketOpenFunction.isItPremarket())
+  // console.log(isMarketOpenFunction.isItAfterHours())
+
+
 
   const colors1 = ['#52e3c2', '#ff4495']
   const colors2 = ['#d211fe', '#40c4ff']
@@ -134,10 +134,7 @@ const MarketPriceTable = () => {
   }
 
 
-
-
   // console.log(marketOverviewData)
-
 
   return (marketDataArray ?
     <Container>

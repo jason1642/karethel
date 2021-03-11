@@ -1,5 +1,5 @@
 class AuthenticationController < ApplicationController
-  before_action :authorize_request, except: [:index, :register, :show]
+  # before_action :authorize_request, except: [:index, :register, :show]
 
   # POST /auth/login
   def login
@@ -21,6 +21,6 @@ class AuthenticationController < ApplicationController
   private
 
   def login_params
-    params.require(:auth).permit(:username, :password)
+    params.require(:auth).permit(:username, :password, :email)
   end
 end

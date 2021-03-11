@@ -24,28 +24,24 @@ const Feed = () => {
     // }
     const fetchNewsData = async () => {
 
-      axios({
-        "method": "GET",
-        "url": "https://bing-news-search1.p.rapidapi.com/news",
-        "headers": {
-          "content-type": "application/octet-stream",
-          "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-          "x-rapidapi-key": BING_NEWS_API_KEY,
-          "x-bingapis-sdk": "true",
-          "useQueryString": true
-        }, "params": {
-          "safeSearch": "Off",
-          "category": "business",
-          "textFormat": "Raw"
+      const options = {
+        method: 'GET',
+        url: 'https://bing-news-search1.p.rapidapi.com/news',
+        params: { safeSearch: 'Off', textFormat: 'Raw' },
+        headers: {
+          'x-bingapis-sdk': 'true',
+          'x-rapidapi-key': '95e9fc104dmsha6ddc418cd1fc07p1de64cjsn2088bc16337e',
+          'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com'
         }
-      })
-        .then((response) => {
-          setNewsApiData(response.data.value)
-          // console.log(response)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+      };
+
+      axios.request(options).then(function (response) {
+        console.log(response.data);
+        setNewsApiData(response.data.value)
+
+      }).catch(function (error) {
+        console.error(error);
+      });
 
     }
     fetchNewsData()
